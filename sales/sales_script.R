@@ -19,7 +19,22 @@ for (salesdata in all_sales){
 # Use a tidyverse join to join all the data together into one file
 # called sales_data, then run the rest of the code
 
-
+sales_data <- full_join(dataset_1,dataset_2)
+sales_data <- full_join(sales_data,dataset_3)
+sales_data <- full_join(sales_data,dataset_4)
+sales_data <- full_join(sales_data,dataset_5)
+sales_data <- full_join(sales_data,dataset_6)
+sales_data <- full_join(sales_data,dataset_7)
+sales_data <- full_join(sales_data,dataset_8)
+sales_data <- full_join(sales_data,dataset_9)
+sales_data <- full_join(sales_data,dataset_10)
+sales_data <- full_join(sales_data,dataset_11)
+sales_data <- full_join(sales_data,dataset_12)
+sales_data <- full_join(sales_data,dataset_13)
+sales_data <- full_join(sales_data,dataset_14)
+sales_data <- full_join(sales_data,dataset_15)
+sales_data <- full_join(sales_data,dataset_16)
+dim(sales_data)
 
 ########################################
 
@@ -27,6 +42,7 @@ for (salesdata in all_sales){
 sales_summary <- sales_data %>%
   group_by(pizza, month) %>% 
   summarize(total_sales = sum(number))
+sales_summary
 
 ggplot(data = sales_summary, aes(x = pizza, y = total_sales))+
   geom_bar(stat = "identity")
